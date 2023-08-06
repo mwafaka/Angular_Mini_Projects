@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Item} from './item'
+import { Item } from './item';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,10 +31,7 @@ export class AppComponent {
     });
   }
 
-  deleteItem(item: Item) {
-    const index = this.allItems.indexOf(item);
-    if (index !== -1) {
-      this.allItems.splice(index, 1);
-    }
+  remove(item: Item) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }
