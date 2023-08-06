@@ -1,0 +1,16 @@
+<div class="movie-search">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search for movies"
+  />
+  <button (click)="searchMovies()">Search</button>
+
+  <div *ngIf="movies.length > 0" class="movie-list">
+    <div *ngFor="let movie of movies" class="movie">
+      <img [src]="movie.Poster" alt="{{ movie.Title }} Poster" />
+      <h3>{{ movie.Title }}</h3>
+      <p>Year: {{ movie.Year }}</p>
+    </div>
+  </div>
+</div>
